@@ -1,0 +1,97 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+firebase-debug.log*
+
+# Firebase
+.firebase/
+.firebaserc
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+jspm_packages/
+bower_components/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build files
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.cache/
+.temp/
+
+# Debug files
+*.local
+*.log.*
+*.tsbuildinfo
+
+# Testing
+coverage/
+.nyc_output/
+jest.config.local.js
+
+# TypeScript
+*.tsbuildinfo
+
+# Package Manager specific
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.npm/
+.yarn/
+.pnp.*
+
+# Editors and IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Firebase Emulators
+.firebase-emulators.json
+firebase-debug.log
+
+# Vite specific
+.env
+.env.*.local
+.env.*.override
+.env.*.backup
+
+# Service worker generated files
+public/sw.js
+public/workbox-*.js
+
+# Local development overrides
+override.json
