@@ -1,16 +1,42 @@
 import { useState } from 'react'
+import { Routes, Route, Link, Navigate } from 'react-router-dom'
 import './App.css'
 import Lobby from './components/Lobby'
 import { Toaster } from 'react-hot-toast'
 import { FaGamepad } from 'react-icons/fa'
+import ProfilePage from './components/ProfilePage'
+import { AuthButtons } from './components/AuthButtons'
 
 function App() {
   const [showRules, setShowRules] = useState(false)
 
-  return (
-    <div className="app-container">
-      <Toaster position="top-right" />
-      
+  const NavBar = () => {
+    return (
+      <nav className="game-nav">
+        <div className="nav-container">
+          <div className="nav-brand">
+            <FaGamepad className="nav-icon" />
+            <span>Multiplayer Board Game</span>
+          </div>
+          
+          <div className="nav-links">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+            <Link to="/profile" className="nav-link">
+              Profile
+            </Link>
+            <AuthButtons />
+          </div>
+        </div>
+      </nav>
+    );
+  };
+  
+  
+
+  const GameScreen = () => (
+    <>
       <header className="app-header">
         <h1>Multiplayer Board Game <FaGamepad className="game-icon" /></h1>
       </header>
@@ -40,6 +66,21 @@ function App() {
           {showRules ? 'Hide Rules' : 'Show Rules'}
         </button>
       </footer>
+    </>
+  )
+
+  return (
+    <div className="app-container">
+      <Toaster position="top-right" />
+      
+      {/* Navigation Bar */}
+      <NavBar />
+
+      <Routes>
+        <Route path="/" element={<GameScreen />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </div>
   )
 }
