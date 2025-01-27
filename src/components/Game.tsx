@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { doc, onSnapshot, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { toast } from 'react-hot-toast';
+import './Game.css'
 
 const SIMILAR_MATCH_SIZE = 4;
 const BOARD_SIZE = 8; // Change this value to adjust board dimensions
@@ -18,6 +19,39 @@ interface GameProps {
   gameId: string;
   playerId: string;
 }
+
+
+interface GameIdDisplayProps {
+  gameId: string;
+}
+
+const GameIdDisplay = ({ gameId }: GameIdDisplayProps) => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  // Use useCallback to memoize the function
+  const copyGameId = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(gameId);
+      setIsCopied(true);
+      
+      // Reset copied status after 2 seconds
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  }, [gameId]); // Dependency array ensures function updates when gameId changes
+
+  return (
+    <div className="game-id-container">
+      <h2 className="game-id">{gameId}</h2>
+      <button className="copy-button" onClick={copyGameId}>
+        📋
+        {isCopied && <span className="copied-message">Copied!</span>}
+      </button>
+    </div>
+  );
+};
+
 
 const Game = ({ gameId, playerId }: GameProps) => {
   const [gameState, setGameState] = useState<GameState | null>(null);
@@ -167,7 +201,7 @@ const Game = ({ gameId, playerId }: GameProps) => {
     ) : (
     <div className="waiting-message">
         <p>Share this Game ID with player 2:</p>
-        <h2>{gameId}</h2>
+        <GameIdDisplay gameId={gameId} />
         <p>Waiting for opponent to join...</p>
     </div>
     )}

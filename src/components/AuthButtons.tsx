@@ -8,10 +8,11 @@ export const AuthButtons = () => {
       {!isAuthenticated ? (
         <button className = "auth-button" onClick={() => loginWithRedirect()}>Log In</button>
       ) : (
-        <button
-          onClick={() =>
-            logout({ logoutParams: { returnTo: import.meta.env.VITE_AUTH0_REDIRECT_URI } })
-          }
+        <button 
+            className = "auth-button"
+            onClick={() =>
+                logout({ logoutParams: { returnTo: import.meta.env.VITE_AUTH0_REDIRECT_URI } })
+            }
         >
           Log Out
         </button>
