@@ -9,7 +9,7 @@ npm install gh-pages --save-dev
 npm run build
 ```
 
-You might want to configure the vite.config.ts file
+You might want to configure the `vite.config.ts` file
 ```ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
