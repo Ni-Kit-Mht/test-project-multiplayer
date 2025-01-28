@@ -5,6 +5,7 @@ After you unzip the test-project-multiplayer
 cd test-project-multiplayer
 npm install react-hot-toast react-icons
 npm install -g firebase-tools
+npm install -D tailwindcss postcss autoprefixer
 npm install gh-pages --save-dev
 npm run build
 npm run dev
