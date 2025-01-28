@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 Dependency to run the code is in dependency.txt
-After you unzip the test-project-multiplayer
+-After you unzip the test-project-multiplayer
 ```commands for arch linux
 cd test-project-multiplayer
 npm install react-hot-toast react-icons
