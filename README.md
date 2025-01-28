@@ -9,7 +9,7 @@ npm install gh-pages --save-dev
 npm run build
 ```
 
-You might want to configure the `vite.config.ts` file
+You might want to configure the `vite.config.ts` file to host it in github pages.
 ```ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -19,6 +19,14 @@ export default defineConfig({
   plugins: [react()],
   base: '/your-repo-name/', // Match your GitHub repository name
 })
+```
+Add these lines in your package.json file
+```json
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "homepage": "https://your-user-name.github.io/your-repo-name/"
 ```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
