@@ -1,0 +1,8 @@
+@auth0/auth0-react
+react-hot-toast
+firebase
+react-router-dom
+react-icons/fa
+react-dom/client
+
+linkify-react
