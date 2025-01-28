@@ -8,6 +8,7 @@ npm install react-hot-toast react-icons
 npm install firebase
 npm install -g firebase-tools
 npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 npm install @auth0/auth0-react
 npm install gh-pages --save-dev
 npm run build
