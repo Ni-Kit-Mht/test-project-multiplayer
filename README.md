@@ -1,4 +1,25 @@
 # React + TypeScript + Vite
+Dependency to run the code is in dependency.txt
+After you unzip the test-project-multiplayer
+```commands for arch linux
+cd test-project-multiplayer
+npm install react-hot-toast react-icons
+npm install -g firebase-tools
+npm install gh-pages --save-dev
+npm run build
+```
+
+You might want to configure the vite.config.ts file
+```ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  base: '/your-repo-name/', // Match your GitHub repository name
+})
+```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
