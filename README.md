@@ -7,6 +7,7 @@ npm install react-hot-toast react-icons
 npm install -g firebase-tools
 npm install gh-pages --save-dev
 npm run build
+npm run dev
 ```
 
 You might want to configure the `vite.config.ts` file to host it in github pages.
@@ -27,6 +28,17 @@ Add these lines in your package.json file
     "deploy": "gh-pages -d dist"
   },
   "homepage": "https://your-user-name.github.io/your-repo-name/"
+```
+Final commands to deploy to github
+```
+git init
+git add .
+git branch -m main
+git remote add origin https://github.com/your-username/your-repo-name.git
+git commit -m "Prepare for GitHub Pages deployment"
+git push origin main
+
+npm run deploy
 ```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
